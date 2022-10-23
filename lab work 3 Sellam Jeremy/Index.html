@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let numOfCourses = prompt("How many courses did you finish?","0");
+    parseInt(numOfCourses);
+
+    if (isNaN(numOfCourses))
+    {
+        document.write("Invalide Input");
+    }
+    else 
+    {
+        var courseMarks = [];
+        var total = 0;
+        var average = 0;
+
+        for(let i =1;i<=numOfCourses;i++)
+        {
+            
+            courseMarks[i] = parseFloat(prompt("Enter your mark for course " + i));
+            total = total + courseMarks[i];
+            courseMarks.push(i);
+        }
+        average = (total / numOfCourses);
+
+        for(var i = 1;i<=numOfCourses;i++)
+        {
+            document.write(courseMarks[i] + "<br>");
+            document.write("<br>");
+        }
+
+        if(average >= 90  && average <=100 )
+        {
+            document.write("your final average is " + average.toFixed(2) + " Your grade is A+");
+        }
+
+        if(average >= 80  && average <=89 )
+        {
+            document.write("your final average is " + average.toFixed(2) + " Your grade is B");
+        }
+
+        if(average >= 70  && average <=79 )
+        {
+            document.write("your final average is " + average.toFixed(2) + " Your grade is C");
+        }
+        
+        if(average >= 60  && average <=69 )
+        {
+            document.write("your final average is " + average.toFixed(2) + " Your grade is D");
+        }
+
+        if(average <60)
+        {
+            document.write("your final average is " + average.toFixed(2) + " Your grade is F");
+        }
+
+        else  
+        {
+            document.write("sorry, All the marks have to be from minimum 0 to maximum 100!");
+        }
+    }
+    
+
+    </script>
+</body>
+</html>
